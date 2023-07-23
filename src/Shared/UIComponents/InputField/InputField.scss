@@ -1,0 +1,29 @@
+.full-input {
+
+    padding: 3px;
+    border: 1px solid #d6d6d6;
+    border-radius: 1.6rem;
+    width: 46%;
+
+    input {
+        padding: 1rem;
+        outline: none;
+        border: none;
+        display: block;
+        line-height: 1.2em;
+        font-size: 14pt;
+        margin-bottom: .4rem;
+        width: -webkit-fill-available;
+    }
+
+    label {
+        display: block;
+        font-size: 1.5rem;
+        color: #595959;
+        margin-top: -1.3rem;
+        margin-left: 1rem;
+        background-color: white;
+        width: fit-content;
+        padding: 0 0.4rem
+    }
+}

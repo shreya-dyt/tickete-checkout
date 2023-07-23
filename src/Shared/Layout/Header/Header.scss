@@ -1,0 +1,19 @@
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem 10rem;
+
+
+    .tickete-title {
+        font-size: 2.5rem;
+        font-weight: 600;
+    }
+
+    .help-section {
+        display: flex;
+    }
+
+    @media screen and (min-width: 300px) and (max-width: 600px) {
+        min-width: 100%;
+    }
+}

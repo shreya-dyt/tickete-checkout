@@ -1,0 +1,432 @@
+.checkout-form-container {
+    margin: 0 10rem;
+
+    .checkout-form-body-container {
+        display: flex;
+        margin-top: 7rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #D6D6D6;
+
+        .form-body-details {
+            width: 90%;
+            border-right: 1px solid #D6D6D6;
+            margin-right: 4rem;
+            padding-right: 4rem;
+
+
+            .confirm-text {
+                font-size: 5rem;
+                font-weight: bolder;
+                color: #474747;
+            }
+
+            .entering-details-container {
+                margin-top: 4rem;
+
+                .enter-details-txt {
+                    font-weight: 600;
+                    font-size: 2.5rem;
+                }
+
+                .subdetails-text {
+                    font-size: 1.6rem;
+                    line-height: 250%;
+                }
+            }
+
+            .input-fields-container {
+                margin-top: 4rem;
+
+                .input-fields-container-sec {
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+
+            .additional-info-container {
+                margin-top: 6rem;
+
+                .additional-info-title {
+                    font-size: 2.5rem;
+                    font-weight: 600;
+                }
+
+                .additional-subtext {
+                    font-size: 1.6rem;
+                    margin-top: 1rem;
+                }
+
+                .additional-input-fields {
+                    margin-top: 4rem;
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+            }
+
+            .mode-payment-section {
+                margin-top: 6rem;
+                padding-bottom: 2rem;
+                border-bottom: 1px solid #D6D6D6;
+
+                .mode-payment-title {
+                    font-weight: 600;
+                    font-size: 2.5rem;
+                }
+
+                .mode-payment-sub-title {
+                    font-size: 1.6rem;
+                    margin-top: 1rem;
+                }
+
+                .select-mode-section {
+                    position: relative;
+                    width: 100%;
+                    margin-top: 3rem;
+
+                    .input-field-card {
+                        position: absolute;
+                        right: 0;
+                        color: black;
+                    }
+
+                    .container input {
+                        position: absolute;
+                        opacity: 0;
+                        cursor: pointer;
+                    }
+
+                    .master-card {
+                        font-size: 1.8rem;
+                        font-weight: 600;
+                        display: flex;
+                        align-items: center;
+                        position: relative;
+                        -webkit-user-select: none;
+                        -moz-user-select: none;
+                        -ms-user-select: none;
+                        user-select: none;
+                    }
+
+                    .container input:checked~.checkmark {
+                        background-color: black;
+                        // border: 1px solid black;
+                    }
+
+                    .checkmark {
+                        position: absolute;
+                        // top: 1px;
+
+                        right: 0;
+                        height: 25px;
+                        width: 25px;
+                        background-color: #9999;
+                        border: 2px solid black;
+                        border-radius: 50%;
+                    }
+
+                    .checkmark:after {
+                        content: "";
+                        position: absolute;
+                        display: none;
+                    }
+
+
+
+                    .container input:checked~.checkmark:after {
+                        display: block;
+                    }
+
+                    .container .checkmark:after {
+                        top: 9px;
+                        left: 9px;
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: white;
+                    }
+
+
+                    .mode-selection-one {
+                        margin-top: 2rem;
+                        margin-bottom: 2rem;
+                        border-bottom: 1px solid #d6d6d6;
+
+                        .input-fields-container-sec {
+                            display: flex;
+                            justify-content: space-between;
+                        }
+                    }
+                }
+
+            }
+
+            .total-price-section {
+                margin-top: 4rem;
+
+
+                .total-price-tilte {
+                    font-size: 2rem;
+                    font-weight: 600;
+                }
+
+                .total-price-subtitle {
+                    font-size: 1.2rem;
+                    margin-top: .5rem;
+                }
+
+                .total-price-trips {
+                    margin-top: 3rem;
+                    padding: 1.4rem;
+                    background-color: #F5F5F5;
+                    border-radius: 1rem;
+                    display: flex;
+                    align-items: center;
+
+                    label {
+                        font-size: 1.2rem;
+                        font-weight: 600;
+                        margin-left: 1rem;
+                    }
+                }
+
+                .confirm-paytext {
+                    margin-top: 1.6rem;
+                    margin-bottom: 2rem;
+                    font-size: 1.2rem;
+
+                    a {
+                        color: #1733B6;
+                        text-decoration: none;
+                    }
+                }
+
+                .pay-btn {
+                    background: #000;
+                    padding: 1.6rem;
+                    border: none;
+                    border-radius: 1.2rem;
+                    color: white;
+                    font-size: 1.8rem;
+                    font-weight: 600;
+                    display: flex;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        //right side styling
+
+        .form-checkout-details {
+            width: 42rem;
+
+            .cover-image {
+                width: 42rem;
+            }
+
+            .sub-text-details {
+                font-weight: 600;
+                color: #474747;
+                margin-top: 1rem;
+                font-size: 2.2rem;
+                font-weight: bolder;
+            }
+
+            .payment-user-details {
+                width: 42rem;
+                margin-top: 3rem;
+                font-size: 2rem;
+                border-bottom: 1px solid #d6d6d6;
+                font-weight: 600;
+
+                div {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 1rem;
+
+                    span {
+                        margin: 0 0 0rem 1.5rem;
+
+                    }
+                }
+            }
+
+            .tickets-overview-section {
+                margin-top: 3rem;
+
+                .ticket-overview-text {
+                    font-size: 2.2rem;
+                    color: #474747;
+                    font-weight: bolder;
+                    margin-bottom: 2rem;
+                }
+
+                .ticket-overview-details {
+                    font-size: 2rem;
+
+                    .details {
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 1rem;
+                    }
+
+                    .promo-code {
+                        color: #006642;
+                        font-weight: 600;
+                        margin-left: 1rem;
+                    }
+
+                    .promo-code-section {
+                        display: flex;
+                        align-items: center;
+                        padding: 1rem 0 3rem 0;
+                        border-bottom: 1px solid #D6D6D6;
+                    }
+                }
+
+                .discount-applied {
+                    color: #006642;
+                    font-weight: 600;
+                    border-bottom: 1px solid #d6d6d6;
+                    padding-bottom: 3rem;
+                    margin-bottom: 2rem;
+                }
+
+            }
+
+            .total-amount-section {
+                margin-top: 3rem;
+
+                .total-text-title {
+                    font-weight: 600;
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                .pay-in-currency {
+                    margin-top: 1rem;
+                    font-size: 1.8rem;
+
+                    a {
+                        color: #595959;
+                    }
+                }
+            }
+
+            .free-cancellation-section {
+                margin-top: 2rem;
+                padding: 2rem;
+                background-color: #F5F5F5;
+                border-radius: 2rem;
+
+                .free-cancellation-title {
+                    margin-bottom: 1rem;
+                    font-weight: bolder;
+                }
+            }
+        }
+
+
+
+    }
+
+    .questions-sections {
+        margin-top: 4rem;
+        display: flex;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid #D6D6D6;
+
+        .questions-part-left-side {
+            width: 70%;
+            font-size: 1.6rem;
+            margin-right: 12rem;
+
+            .questions-asked-title {
+                font-size: 2.5rem;
+                font-weight: 600;
+            }
+
+            .questions-part {
+                margin-top: 2rem;
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 2rem;
+
+                .questions {
+                    font-weight: 600;
+                }
+            }
+
+            .answers-part {
+                width: 90%;
+            }
+
+        }
+
+        .questions-part-right-side {
+            width: 42rem;
+            height: fit-content;
+            background-color: #FFF7ED;
+            border-radius: 2rem;
+            padding: 3rem 4rem;
+            color: #7F2D0F;
+            display: flex;
+            justify-content: space-between;
+
+            .need-help-text {
+                font-size: 2rem;
+                font-weight: 600;
+            }
+
+            .sub-text {
+                font-size: 1.6rem;
+                margin-top: 1rem;
+            }
+
+            .chat-btn {
+                border: 1px solid #7F2D0F;
+                background: none;
+                border-radius: 1.4rem;
+                padding: 1rem 3rem;
+                font-size: 1.6rem;
+                color: #7F2D0F;
+                font-weight: 600;
+                margin-top: 3rem;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .ticket-promise-section {
+        margin-top: 2rem;
+
+        .promise-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 3rem;
+        }
+
+        .ticket-container {
+            display: flex;
+            justify-content: space-between;
+
+
+            .promise-container {
+                border-radius: 1.6rem;
+                border: 1px solid #D6D6D6;
+                padding: 1.8rem 2rem;
+
+                .official-tickets {
+                    margin-top: 4rem;
+                    font-size: 1.6rem;
+                    font-weight: 600;
+                }
+
+                .sub-tickets {
+                    width: 16vw;
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+}
