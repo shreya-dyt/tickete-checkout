@@ -5,6 +5,15 @@
     border-radius: 1.6rem;
     width: 46%;
 
+    .input-holder {
+        display: flex;
+        align-items: center;
+    }
+
+    .icon-field {
+        padding-left: .6rem;
+    }
+
     input {
         padding: 1rem;
         outline: none;
@@ -14,6 +23,12 @@
         font-size: 14pt;
         margin-bottom: .4rem;
         width: -webkit-fill-available;
+
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
     }
 
     label {

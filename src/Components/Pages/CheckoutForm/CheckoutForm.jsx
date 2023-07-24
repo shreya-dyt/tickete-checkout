@@ -6,7 +6,7 @@ import {
     confirmandpay, EnterDetails, SubDetails, coverImageSubtext, TicketsOverview,
     paxType, price, fee, discountApplied, Price, PromoCodeText, Total, payInCurr,
     FreeCancelText, subCancelText, AdditionalInformation, AdditionalInfoSubText,
-    selectMode, selectModeSubText, CreditCard, klarna, totalPrice, totalPriceSubText, TnC, activityProvider, confirmPayText, FrequentlyQ, questionOne, answerOne, questionTwo, answerTwo, TicketPromise, OfficialticketsSub, Officialtickets, OfficialticketsSub1, Officialtickets1, Officialtickets2, OfficialticketsSub2, Officialtickets3, OfficialticketsSub3
+    selectMode, selectModeSubText, CreditCard, klarna, totalPrice, totalPriceSubText, TnC, activityProvider, confirmPayText, FrequentlyQ, questionOne, answerOne, questionTwo, answerTwo, TicketPromise, OfficialticketsSub, Officialtickets, OfficialticketsSub1, Officialtickets1, Officialtickets2, OfficialticketsSub2, Officialtickets3, OfficialticketsSub3, dropdown
 } from "../../../Constant/Strings/strings";
 import InputField from "../../../Shared/UIComponents/InputField/InputField";
 
@@ -27,6 +27,8 @@ import { ReactComponent as Plus } from "../../../Constant/Svg/Plus.svg"
 import { ReactComponent as Tick } from "../../../Constant/Svg/Tick.svg"
 import { ReactComponent as CalendarGrey } from "../../../Constant/Svg/CalendarGrey.svg"
 import { ReactComponent as ShieldBlue } from "../../../Constant/Svg/ShieldBlue.svg"
+import { ReactComponent as VisaLogo } from "../../../Constant/Svg/VisaLogo.svg"
+
 import Footer from "../../../Shared/Layout/Footer/Footer";
 
 
@@ -42,10 +44,17 @@ const CheckoutForm = () => {
     const [showSeven, setShowSeven] = useState(false);
     const [showEight, setShowEight] = useState(false);
 
+    const handleChange = (event) => {
+        const selectedValue = event.target.value;
+        // Do something with the selected value
+        console.log(selectedValue);
+    };
+
     return (
         <>
             <Header />
             <div className="checkout-form-container">
+                {window.innerWidth < 400 && <div className="phone-pay-text">{confirmandpay}</div>}
                 <div className="checkout-form-body-container">
 
                     {/* left side */}
@@ -72,7 +81,7 @@ const CheckoutForm = () => {
                                     Icon={<MasterFlag />}
                                 />
                             </div>
-                            <div className="input-fields-container-sec" style={{ marginTop: "4rem" }}>
+                            <div className="input-fields-container-sec-2">
                                 <InputField
                                     htmlFor="fullname" name="fullname"
                                     type="text"
@@ -97,11 +106,14 @@ const CheckoutForm = () => {
                                     placeholder="<custom input>"
                                     label="Full Name"
                                 />
-                                <InputField
-                                    type="dropdown"
-                                    placeholder="<dropdown>"
-                                    label="dropdown"
-                                />
+                                <div className="dropdown-container">
+                                    <label htmlFor="dropdown">{dropdown}</label>
+                                    <select id="dropdown" onChange={handleChange} className="dropdown-options">
+                                        <option value="option1" className="options">dropdown</option>
+                                        <option value="option2" className="options">Option 2</option>
+                                        <option value="option3" className="options">Option 3</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
 
@@ -128,10 +140,10 @@ const CheckoutForm = () => {
                                             type="number"
                                             placeholder="1234 1234 1234 1234"
                                             label="Card Number"
-                                        // Icon={<MasterFlag />}
+                                            Icon={<VisaLogo />}
                                         />
                                     </div>
-                                    <div className="input-fields-container-sec" style={{ marginTop: "4rem", paddingBottom: "4rem" }}>
+                                    <div className="input-fields-container-sec-2" >
                                         <InputField
                                             htmlFor="fullname" name="fullname"
                                             type="text"
@@ -160,7 +172,7 @@ const CheckoutForm = () => {
                             <div className="total-price-tilte">{totalPrice}</div>
                             <div className="total-price-subtitle"><a href="">{payInCurr}</a></div>
                             <div className="total-price-trips">
-                                <input type="radio" name="total-price" id="total-price" checked="checked" />
+                                <input type="radio" id="total-price" checked="checked" />
                                 <label htmlFor="total-price" >{totalPriceSubText}</label>
                             </div>
                             <div className="confirm-paytext">{confirmPayText} <a href="">{TnC}</a>& the <a href="">{activityProvider}</a> </div>
@@ -170,7 +182,11 @@ const CheckoutForm = () => {
 
                     {/*right side */}
                     <div className="form-checkout-details">
-                        <img src="../../../Assests/Images/coverImage1.png" alt="cover-img" className="cover-image" />
+                        {window.innerWidth > 400 ?
+                            <img src="../../../Assests/Images/coverImage1.png" alt="cover-img" className="cover-image" />
+                            :
+                            <img src="../../../Assests/Images/coverImage2.png" alt="cover-img" className="cover-image" />
+                        }
                         <div className="sub-text-details">{coverImageSubtext}</div>
                         <div className="payment-user-details">
                             <div><Varient /><span>varient name</span></div>
@@ -214,6 +230,7 @@ const CheckoutForm = () => {
                         {show &&
                             <div className="answers-part">{answerOne}</div>
                         }
+                        <hr />
 
                         <div className="questions-part">
                             <div className="questions">{questionTwo}</div>
@@ -226,6 +243,7 @@ const CheckoutForm = () => {
                         {showTwo &&
                             <div className="answers-part">{answerTwo}</div>
                         }
+                        <hr />
 
                         <div className="questions-part">
                             <div className="questions">{questionOne}</div>
@@ -238,6 +256,7 @@ const CheckoutForm = () => {
                         {showThree &&
                             <div className="answers-part">{answerOne}</div>
                         }
+                        <hr />
 
                         <div className="questions-part">
                             <div className="questions">{questionTwo}</div>
@@ -250,6 +269,7 @@ const CheckoutForm = () => {
                         {showFour &&
                             <div className="answers-part">{answerTwo}</div>
                         }
+                        <hr />
 
                         <div className="questions-part">
                             <div className="questions">{questionOne}</div>
@@ -262,6 +282,7 @@ const CheckoutForm = () => {
                         {showFive &&
                             <div className="answers-part">{answerOne}</div>
                         }
+                        <hr />
 
                         <div className="questions-part">
                             <div className="questions">{questionTwo}</div>
@@ -274,6 +295,7 @@ const CheckoutForm = () => {
                         {showSix &&
                             <div className="answers-part">{answerTwo}</div>
                         }
+                        <hr />
 
                         <div className="questions-part">
                             <div className="questions">{questionOne}</div>
@@ -286,6 +308,7 @@ const CheckoutForm = () => {
                         {showSeven &&
                             <div className="answers-part">{answerOne}</div>
                         }
+                        <hr />
 
                         <div className="questions-part">
                             <div className="questions">{questionTwo}</div>
@@ -298,6 +321,8 @@ const CheckoutForm = () => {
                         {showEight &&
                             <div className="answers-part">{answerTwo}</div>
                         }
+                        {window.innerWidth < 400 && <hr />}
+
 
                     </div>
                     <div className="questions-part-right-side">
@@ -315,23 +340,35 @@ const CheckoutForm = () => {
                     <div className="ticket-container">
                         <div className="promise-container">
                             <div><Tick /></div>
-                            <div className="official-tickets">{Officialtickets}</div>
-                            <div className="sub-tickets">{OfficialticketsSub}</div>
+                            <div>
+
+                                <div className="official-tickets">{Officialtickets}</div>
+                                <div className="sub-tickets">{OfficialticketsSub}</div>
+                            </div>
                         </div>
                         <div className="promise-container">
                             <div><ChatIcon /></div>
-                            <div className="official-tickets">{Officialtickets1}</div>
-                            <div className="sub-tickets">{OfficialticketsSub1}</div>
+                            <div>
+
+                                <div className="official-tickets">{Officialtickets1}</div>
+                                <div className="sub-tickets">{OfficialticketsSub1}</div>
+                            </div>
                         </div>
                         <div className="promise-container">
                             <div><CalendarGrey /></div>
-                            <div className="official-tickets">{Officialtickets2}</div>
-                            <div className="sub-tickets">{OfficialticketsSub2}</div>
+                            <div>
+
+                                <div className="official-tickets">{Officialtickets2}</div>
+                                <div className="sub-tickets">{OfficialticketsSub2}</div>
+                            </div>
                         </div>
                         <div className="promise-container">
                             <div><ShieldBlue /></div>
-                            <div className="official-tickets">{Officialtickets3}</div>
-                            <div className="sub-tickets">{OfficialticketsSub3}</div>
+                            <div>
+
+                                <div className="official-tickets">{Officialtickets3}</div>
+                                <div className="sub-tickets">{OfficialticketsSub3}</div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -17,9 +17,9 @@ const Footer = () => {
                     <a href="">{footerTab4}</a>
                 </div>
                 <div className="social-icons">
-                    <div><Instagram /></div>
-                    <div><Facebook /></div>
-                    <div><Twitter /></div>
+                    {window.innerWidth < 400 ? <div><Instagram width="32" height="32" /></div> : <div><Instagram /></div>}
+                    {window.innerWidth < 400 ? <div><Facebook width="32" height="32" /></div> : <div><Facebook /></div>}
+                    {window.innerWidth < 400 ? <div><Twitter width="32" height="32" /></div> : <div><Twitter /></div>}
                 </div>
             </div>
         </div>

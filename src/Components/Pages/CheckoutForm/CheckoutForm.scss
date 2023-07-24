@@ -1,6 +1,10 @@
 .checkout-form-container {
     margin: 0 10rem;
 
+    .phone-pay-text {
+        display: none;
+    }
+
     .checkout-form-body-container {
         display: flex;
         margin-top: 7rem;
@@ -41,6 +45,12 @@
                     display: flex;
                     justify-content: space-between;
                 }
+
+                .input-fields-container-sec-2 {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 4rem;
+                }
             }
 
             .additional-info-container {
@@ -60,6 +70,39 @@
                     margin-top: 4rem;
                     display: flex;
                     justify-content: space-between;
+                }
+
+                .dropdown-container {
+                    padding: 3px;
+                    border: 1px solid #d6d6d6;
+                    border-radius: 1.6rem;
+                    width: 46%;
+
+                    label {
+                        display: block;
+                        font-size: 1.5rem;
+                        color: #595959;
+                        margin-top: -1.3rem;
+                        margin-left: 1rem;
+                        background-color: white;
+                        width: fit-content;
+                        padding: 0 0.4rem
+                    }
+
+                    .dropdown-options {
+                        width: -webkit-fill-available;
+                        border: none;
+                        margin-top: 1rem;
+                        font-size: 14pt;
+                        margin-left: 1rem;
+                        outline: none;
+                    }
+
+
+
+                    .options {
+                        margin-top: 1rem;
+                    }
                 }
 
             }
@@ -155,6 +198,23 @@
                         .input-fields-container-sec {
                             display: flex;
                             justify-content: space-between;
+
+                            .input-holder {
+                                position: relative;
+                            }
+
+                            .outside {
+                                position: absolute;
+                                right: 10px;
+                                display: block;
+                            }
+                        }
+
+                        .input-fields-container-sec-2 {
+                            display: flex;
+                            justify-content: space-between;
+                            margin-top: 4rem;
+                            padding-bottom: 4rem;
                         }
                     }
                 }
@@ -188,7 +248,12 @@
                         font-weight: 600;
                         margin-left: 1rem;
                     }
+
+                    #total-price {
+                        accent-color: black;
+                    }
                 }
+
 
                 .confirm-paytext {
                     margin-top: 1.6rem;
@@ -359,6 +424,7 @@
 
             .answers-part {
                 width: 90%;
+
             }
 
         }
@@ -424,6 +490,169 @@
 
                 .sub-tickets {
                     width: 16vw;
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        margin: 0 4rem;
+        width: 100%;
+
+        .phone-pay-text {
+            display: block;
+            font-size: 3rem;
+            font-weight: 600;
+        }
+
+        .checkout-form-body-container {
+            flex-direction: column-reverse;
+            margin-top: 3rem;
+
+            .form-body-details {
+                width: fit-content;
+                border: none;
+                margin: 0;
+                padding: 0;
+
+                .input-fields-container {
+                    .input-fields-container-sec {
+                        flex-direction: column;
+
+                        .full-input {
+                            width: 42rem;
+                            margin-bottom: 3rem;
+                        }
+                    }
+
+                    .input-fields-container-sec-2 {
+                        flex-direction: column;
+                        margin: 0rem;
+
+                        .full-input {
+                            width: 42rem;
+                            margin-bottom: 3rem;
+                        }
+                    }
+                }
+
+                .additional-info-container {
+                    margin-top: 2rem;
+
+                    .additional-input-fields {
+                        flex-direction: column;
+
+                        .full-input {
+                            width: 42rem;
+                            margin-bottom: 3rem;
+                        }
+
+                        .dropdown-container {
+                            width: initial;
+                            padding: 1rem 2rem 2rem 0rem;
+
+                            label {
+                                margin-top: -1.8rem;
+                            }
+                        }
+                    }
+                }
+
+                .mode-payment-section {
+                    .select-mode-section {
+
+                        .mode-selection-one {
+
+                            .input-fields-container-sec {
+                                flex-direction: column;
+
+                                .full-input {
+                                    width: 42rem;
+                                    margin-bottom: 3rem;
+                                }
+                            }
+
+                            .input-fields-container-sec-2 {
+                                margin-top: 0rem;
+                                flex-direction: column;
+                                padding-bottom: 0rem;
+
+                                .full-input {
+                                    width: 42rem;
+                                    margin-bottom: 3rem;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .total-price-section {
+                    .total-price-trips {
+                        label {
+                            font-size: 1.6rem;
+                        }
+                    }
+
+                    .confirm-paytext {
+                        font-size: 1.6rem;
+
+                        a {
+                            font-weight: 600;
+                        }
+                    }
+
+                    .pay-btn {
+                        width: 100%;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+
+        .confirm-text {
+            display: none;
+        }
+
+
+        .ticket-overview-details {
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid #d6d6d6;
+        }
+
+        .questions-sections {
+            flex-direction: column;
+
+            .questions-part-left-side {
+                width: 42rem;
+                margin-right: 0rem;
+            }
+
+            .questions-part-right-side {
+                width: 38rem;
+                margin-top: 2rem;
+                margin-left: -2rem;
+            }
+        }
+
+        .ticket-promise-section .ticket-container {
+            flex-direction: column;
+
+            .promise-container {
+                display: flex;
+                align-items: flex-start;
+                gap: 2rem;
+                border: none;
+                padding: 0;
+                margin-bottom: 3rem;
+
+                .official-tickets {
+                    margin-top: 0rem;
+                    font-size: 2rem;
+                }
+
+                .sub-tickets {
+                    width: 100%;
                     font-size: 1.6rem;
                 }
             }
