@@ -183,9 +183,9 @@ const CheckoutForm = () => {
                     {/*right side */}
                     <div className="form-checkout-details">
                         {window.innerWidth > 400 ?
-                            <img src="../../../Assests/Images/CoverImage.png" alt="cover-img" className="cover-image" />
+                            <img src={process.env.PUBLIC_URL + "/Assests/Images/CoverImage.png"} alt="cover-img" className="cover-image" />
                             :
-                            <img src="../../../Assests/Images/SubCoverImage.png" alt="phonecover-img" className="cover-image" />
+                            <img src={process.env.PUBLIC_URL + "/Assests/Images/SubCoverImage.png"} alt="phonecover-img" className="cover-image" />
                         }
                         <div className="sub-text-details">{coverImageSubtext}</div>
                         <div className="payment-user-details">
