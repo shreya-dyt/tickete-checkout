@@ -183,9 +183,9 @@ const CheckoutForm = () => {
                     {/*right side */}
                     <div className="form-checkout-details">
                         {window.innerWidth > 400 ?
-                            <img src="../../../Assests/Images/coverImage1.png" alt="cover-img" className="cover-image" />
+                            <img src="../../../Assests/Images/coverimage1.png" alt="cover-img" className="cover-image" />
                             :
-                            <img src="../../../Assests/Images/coverImage2.png" alt="cover-img" className="cover-image" />
+                            <img src="../../../Assests/Images/coverimage2.png" alt="cover-img" className="cover-image" />
                         }
                         <div className="sub-text-details">{coverImageSubtext}</div>
                         <div className="payment-user-details">
