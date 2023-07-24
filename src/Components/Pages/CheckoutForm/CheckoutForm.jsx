@@ -185,7 +185,7 @@ const CheckoutForm = () => {
                         {window.innerWidth > 400 ?
                             <img src={process.env.PUBLIC_URL + "/Assests/Images/CoverImage.png"} alt="cover-img" className="cover-image" />
                             :
-                            <img src={process.env.PUBLIC_URL + "/Assests/Images/SubCoverImage.png"} alt="phonecover-img" className="cover-image" />
+                            <img src={process.env.PUBLIC_URL + "/Assests/Images/SubCoverImage.png"} alt="phone-cover-img" className="cover-image" />
                         }
                         <div className="sub-text-details">{coverImageSubtext}</div>
                         <div className="payment-user-details">
